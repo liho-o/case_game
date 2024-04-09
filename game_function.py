@@ -68,7 +68,10 @@ def command_action(command, action):
             else:
                 print('Неудача - повреждение бортвого самописца')
                 # Заменить текст
-    print(command.rocket)
+    print('Ракета -',command.rocket)
+    print('Ученые -', command.science)
+    print('Опыт -', command.exp)
+
     return True
 
 
