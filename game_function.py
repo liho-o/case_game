@@ -34,7 +34,7 @@ def analyse_fly(command):
 
 
 def start_rocket(command):
-    # Запуск рокеты - функция с рандом при успешном запуске записывает  command.success_start = True и конец игры
+    # Запуск ракеты - функция с рандом при успешном запуске записывает  command.success_start = True и конец игры
     pass
 
 
