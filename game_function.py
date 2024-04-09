@@ -28,7 +28,7 @@ def round_function(command):
 
 
 def analyse_fly(command):
-    command.exp += 2*(command.failed_fly)**0.5
+    command.exp += 2 * (command.failed_fly ** 0.5)
     command.rocket *= 1.5
     command.science *= 1.5
 
@@ -42,7 +42,6 @@ def start_rocket(command):
     else:
         print("---Ваша ракета не взлетела. Прокачайте ее лучше---")
         command.failed_fly += 1
-
 
 
 def random_event():
