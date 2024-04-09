@@ -1,5 +1,5 @@
 from command_class import Command
-
+import random
 
 def first_stage():
     command_list = []
@@ -11,7 +11,9 @@ def first_stage():
     return command_list
 
 
-def round_function():
+def round_function(command):
+    print('Ход команды -', command.name)
+    # Добавить оформеление и вывод характеристик команды
     text = 'Введите действие:\n'
     # Расписать текст
     while True:
@@ -25,9 +27,25 @@ def round_function():
             text = 'Error\nВы ввели не корретное значение\nВведите действие:\n'
 
 
+def analyse_fly(command):
+    # Анализ данных - увеличивает кратно очки ракеты и ученых сразу ( если были 0 то 0 и остануться)
+    pass
+
+def start_rocket(command):
+    # Запуск рокеты - функция с рандом при успешном запуске записывает  command.success_start = True и конец игры
+    pass
+
+
+def random_event():
+    i = random.random()
+    if i > 0.3:
+        return True
+    else:
+        return False
+
+
 def command_action(command, action):
-    print('Ход команды -', command.name)
-    # Добавить оформеление и вывод характеристик команды
+
     match action:
         case 1:
             command.rocket += 10
@@ -36,20 +54,25 @@ def command_action(command, action):
         case 3:
             command.luck += 10
         case 4:
-            pass
-            #Запуск рокеты - функция с рандом при успешном запуске записывает  command.success_start = True и конец игры
-            #Функция рандома на плохие погодные условия
+            if random_event():
+                start_rocket(command)
+            else:
+                print('Неудача - погода')
+                # Заменить текст
         case 5:
-            pass
-            #Анализ данных - увеличивает кратно очки ракеты и ученых сразу ( если были 0 то 0 и остануться)
-            #Функция рандома на повреждение бортвого самописца
+            if random_event():
+                analyse_fly(command)
+            else:
+                print('Неудача - повреждение бортвого самописца')
+                # Заменить текст
     print(command.rocket)
     return True
 
 
+
 def main_game_stage(command_list):
     for command in command_list:
-        command_action(command, round_function())
+        command_action(command, round_function(command))
         if command.success_start:
             return False
     return True
