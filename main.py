@@ -4,6 +4,7 @@ import game_function
 
 if __name__ == "__main__":
     print('Приветствие')
+    #Заменить текст
     command_list = game_function.first_stage()
     game_process = True
     while game_process:

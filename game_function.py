@@ -14,6 +14,7 @@ def first_stage():
 def round_function():
     not_error = True
     text = 'Введите действие:\n'
+    # Расписать текст
     while not_error:
         try:
             action = int(input(text))
