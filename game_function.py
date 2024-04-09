@@ -14,7 +14,7 @@ def first_stage():
 
 def round_function(command):
     print('Ход команды -', command.name)
-    # Добавить оформеление и вывод характеристик команды
+    # Добавить оформление и вывод характеристик команды
     text = 'Введите действие:\n'
     # Расписать текст
     while True:
@@ -29,8 +29,9 @@ def round_function(command):
 
 
 def analyse_fly(command):
+    command.science *= 1.5
+    command.rocket *= 1.3
     # Анализ данных - увеличивает кратно очки ракеты и ученых сразу ( если были 0 то 0 и остануться)
-    pass
 
 
 def start_rocket(command):
