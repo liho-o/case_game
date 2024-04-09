@@ -13,10 +13,9 @@ def first_stage():
 
 
 def round_function(command):
-    print('Ход команды -', command.name)
-    # Добавить оформление и вывод характеристик команды
-    text = 'Введите действие:\n'
-    # Расписать текст
+    print('----------------\nХод команды -', command.name)
+    text = ('Выберите действие:\n1 - модернизировать ракету\n2 - прокачать ученых\n3 - увеличить опыт инженеров\n'
+            '4 - полететь!!!\n5 - анализ наших возможностей\n')
     while True:
         try:
             action = int(input(text))
@@ -67,14 +66,12 @@ def command_action(command, action):
             if random_event():
                 start_rocket(command)
             else:
-                print('Неудача - погода')
-                # Заменить текст
+                print('Полет отменен - плохая видимость из-за сильного тумана(')
         case 5:
             if random_event():
                 analyse_fly(command)
             else:
-                print('Неудача - повреждение бортвого самописца')
-                # Заменить текст
+                print('Неудача - повреждение топливного отсека(')
     print('Ракета -',command.rocket)
     print('Ученые -', command.science)
     print('Опыт -', command.exp)
