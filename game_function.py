@@ -32,6 +32,7 @@ def analyse_fly(command):
     # Анализ данных - увеличивает кратно очки ракеты и ученых сразу ( если были 0 то 0 и остануться)
     pass
 
+
 def start_rocket(command):
     # Запуск рокеты - функция с рандом при успешном запуске записывает  command.success_start = True и конец игры
     pass
@@ -70,12 +71,9 @@ def command_action(command, action):
     return True
 
 
-
 def main_game_stage(command_list):
     for command in command_list:
         command_action(command, round_function(command))
         if command.success_start:
             return False
     return True
-
-
