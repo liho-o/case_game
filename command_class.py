@@ -6,5 +6,6 @@ class Command:
         self.science = 0
         self.rocket = 0
         self.name = name
-        self.luck = 0
+        self.exp = 0
         self.success_start = False
+        self.failed_fly = 0

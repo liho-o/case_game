@@ -1,6 +1,7 @@
 from command_class import Command
 import random
 
+
 def first_stage():
     command_list = []
     for _ in range(4):
@@ -52,7 +53,7 @@ def command_action(command, action):
         case 2:
             command.science += 10
         case 3:
-            command.luck += 10
+            command.exp += 10
         case 4:
             if random_event():
                 start_rocket(command)
