@@ -9,4 +9,3 @@ if __name__ == "__main__":
     game_process = True
     while game_process:
         game_process = game_function.main_game_stage(command_list)
-
