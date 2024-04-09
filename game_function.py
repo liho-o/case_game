@@ -12,10 +12,9 @@ def first_stage():
 
 
 def round_function():
-    not_error = True
     text = 'Введите действие:\n'
     # Расписать текст
-    while not_error:
+    while True:
         try:
             action = int(input(text))
             if action in [1, 2, 3, 4, 5]:
@@ -40,7 +39,6 @@ def command_action(command, action):
             pass
             #Запуск рокеты - функция с рандом при успешном запуске записывает  command.success_start = True и конец игры
             #Функция рандома на плохие погодные условия
-
         case 5:
             pass
             #Анализ данных - увеличивает кратно очки ракеты и ученых сразу ( если были 0 то 0 и остануться)
