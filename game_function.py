@@ -35,8 +35,15 @@ def analyse_fly(command):
 
 
 def start_rocket(command):
-    # Запуск ракеты - функция с рандом при успешном запуске записывает  command.success_start = True и конец игры
-    pass
+    # Запуск ракеты - функция с рандом при успешном запуске
+    # записывает  command.success_start = True и конец игры
+    chance = (command.rocket ** 2 + command.science*2.5 + command.exp ** 1.5)/1000
+    i = random.random()
+    if chance > i:
+        command.success_start = True
+    else:
+        print("Плохая попытка")
+
 
 
 def random_event():
