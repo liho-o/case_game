@@ -1,14 +1,11 @@
 import game_function
-import data
-game_process = True
+
 
 
 if __name__ == "__main__":
     print('Приветствие')
-    # game_function.first_stage()
+    command_list = game_function.first_stage()
+    game_process = True
     while game_process:
-        a = data.Command('test')
-        action = game_function.round_function()
-        game_function.command_action(a, action)
-        game_process = False
+        game_process = game_function.main_game_stage(command_list)
 
