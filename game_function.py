@@ -20,8 +20,8 @@ def round_function(command):
     """
     This function let the players decide on their move
     """
-    print(ru.TEAM_MOVE, command.name)
-    text = (ru.MOVE)
+    print(ru.MOVE_TEAM, command.name)
+    text = ru.MOVE
     while True:
         try:
             action = int(input(text))
