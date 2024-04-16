@@ -1,5 +1,6 @@
 from command_class import Command
 import random
+import lang as ru
 
 
 def first_stage():
@@ -8,7 +9,7 @@ def first_stage():
     """
     command_list = []
     for _ in range(4):
-        name = input('Введите название вашей команды\n')
+        name = input(ru.TEAM)
         command = Command(name)
         command_list.append(command)
 
@@ -19,18 +20,17 @@ def round_function(command):
     """
     This function let the players decide on their move
     """
-    print('----------------\nХод команды -', command.name)
-    text = ('Выберите действие:\n1 - модернизировать ракету\n2 - прокачать ученых\n3 - увеличить опыт инженеров\n'
-            '4 - полететь!!!\n5 - анализ неудачных полетов\n')
+    print(ru.TEAM_MOVE, command.name)
+    text = (ru.MOVE)
     while True:
         try:
             action = int(input(text))
             if action in [1, 2, 3, 4, 5]:
                 return action
             else:
-                text = 'Error\nВы ввели не корректное значение\nВведите действие:\n'
+                text = ru.ERROR_U
         except ValueError:
-            text = 'Error\nВы ввели не корректное значение\nВведите действие:\n'
+            text = ru.ERROR_U
 
 
 def analyse_fly(command):
@@ -50,9 +50,9 @@ def start_rocket(command):
     i = random.random()
     if chance > i:
         command.success_start = True
-        print('---Поздравляем! Ваша ракета успешно взлетела! Вы победили!---')
+        print(ru.VICTORY)
     else:
-        print("---Ваша ракета не взлетела. Прокачайте ее лучше---")
+        print(ru.WEAK)
         command.failed_fly += 1
 
 
@@ -82,16 +82,16 @@ def command_action(command, action):
             if random_event():
                 start_rocket(command)
             else:
-                print('---Полет отменен - плохая видимость из-за сильного тумана(---')
+                print(ru.FOG)
         case 5:
             if random_event():
                 analyse_fly(command)
             else:
-                print('---Не повезло - повредился бортовой самописец. Информация о полете не сохранилась')
-    print('Ракета -', command.rocket)
-    print('Ученые -', command.science)
-    print('Опыт -', command.exp)
-    print('Количество неудачных попыток -', command.failed_fly)
+                print(ru.INFO)
+    print(ru.SHIP, command.rocket)
+    print(ru.SCIENTISTS, command.science)
+    print(ru.EXP, command.exp)
+    print(ru.FAILED, command.failed_fly)
     return True
 
 
