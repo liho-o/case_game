@@ -97,7 +97,7 @@ def command_action(command, action):
 
 def main_game_stage(command_list):
     """
-    tjugi
+    Detecting if the launch is going to be successful
     """
     for command in command_list:
         command_action(command, round_function(command))
