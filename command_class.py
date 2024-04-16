@@ -1,8 +1,10 @@
 
 class Command:
     def __init__(self, name):
+        '''
+        Features that determine  if the ship will launch
+        '''
         print('Имя команды -', name)
-        # Заменить текст
         self.science = 0
         self.rocket = 0
         self.name = name
